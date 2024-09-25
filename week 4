@@ -1,0 +1,102 @@
+total_bugs = 0
+for day in range(1, 6):
+    bugs_collected = int(input(f"Enter the number of bugs collected on day {day}: "))
+    total_bugs += bugs_collected
+print(f"Total number of bugs collected over 5 days: {total_bugs}")
+
+
+calories_per_minute = 4.2
+for minutes in range(10, 31, 5):
+    calories_burned = minutes * calories_per_minute
+    print(f"Calories burned after {minutes} minutes: {calories_burned}")
+
+
+def main():
+    budget = float(input("Enter the amount you have budgeted for the month: "))
+    total_expenses = 0.0
+    while True:
+        expense = input("Enter an expense (or type 'done' to finish): ")
+        if expense.lower() == 'done':
+            break
+        total_expenses += float(expense)
+    difference = budget - total_expenses
+    if difference > 0:
+        print(f"You are under budget by ${difference:.2f}")
+    elif difference < 0:
+        print(f"You are over budget by ${-difference:.2f}")
+    else:
+        print("You have exactly met your budget.")
+
+
+speed = float(input("Enter the speed of the vehicle in miles per hour: "))
+hours = int(input("Enter the number of hours the vehicle has traveled: "))
+print("Hour\tDistance Traveled")
+for hour in range(1, hours + 1):
+    distance = speed * hour
+    print(f"{hour}\t{distance:.2f} miles")
+
+
+num_years = int(input("Enter the number of years: "))
+total_rainfall = 0
+total_months = 0
+for year in range(1, num_years + 1):
+    print(f"\nYear {year}")
+ for month in range(1, 13):
+ rainfall = float(input(f"Enter the inches of rainfall for month {month}: "))
+total_rainfall += rainfall
+        total_months += 1
+average_rainfall = total_rainfall / total_months
+print(f"\nNumber of months: {total_months}")
+print(f"Total inches of rainfall: {total_rainfall:.2f}")
+print(f"Average rainfall per month: {average_rainfall:.2f}")
+
+
+def celsius_to_fahrenheit(celsius):
+    return (9/5) * celsius + 32
+print(f"{'Celsius':>10} {'Fahrenheit':>12}")
+for celsius in range(21):
+    fahrenheit = celsius_to_fahrenheit(celsius)
+    print(f"{celsius:>10} {fahrenheit:>12.1f}")
+
+
+def calculate_earnings(days):
+    total_pennies = 0
+    daily_earnings = []
+  for day in range(1, days + 1):
+        pennies = 2 ** (day - 1)
+        daily_earnings.append(pennies)
+        total_pennies += pennies
+ print("Day\tEarnings (in pennies)")
+for day, earnings in enumerate(daily_earnings, start=1):
+        print(f"{day}\t{earnings}")
+ total_dollars = total_pennies / 100
+    print("\nTotal earnings in dollars: ${:.2f}".format(total_dollars))
+days = int(input("Enter the number of days: "))
+calculate_earnings(days)
+
+
+total_sum = 0
+while True:
+ number = float(input("Enter a positive number (or a negative number to end): "))
+if number < 0:
+        break
+ total_sum += number
+print("The sum of the positive numbers is:", total_sum)
+
+
+annual_rise = 1.6
+sea_level_rise = []
+for year in range(1, 26):
+    rise = annual_rise * year
+    sea_level_rise.append(rise)
+    print(f"Year {year}: {rise:.2f} mm")
+for year, rise in enumerate(sea_level_rise, start=1):
+    print(f"Year {year}: {rise:.2f} mm")
+
+
+tuition = 8000
+increase_rate = 0.03
+print("Year\tProjected Tuition")
+for year in range(1, 6):
+    tuition += tuition * increase_rate
+    print(f"{year}\t${tuition:.2f}") 
